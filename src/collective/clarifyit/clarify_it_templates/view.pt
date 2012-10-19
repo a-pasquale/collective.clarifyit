@@ -13,6 +13,7 @@
             var doc_id = $('#clarify_it_id').html();
             $('#clarify-it').load('/clarify/'+doc_id+' #content', function(){
                 $("a[rel^='prettyPhoto']").prettyPhoto();
+                $('#content').removeClass();
             });
         });
     });
