@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<model xmlns="http://namespaces.plone.org/supermodel/schema"
+       xmlns:form="http://namespaces.plone.org/supermodel/form">
+    
+    <schema>
+
+        <field name="clarify_it_id" type="zope.schema.TextLine">
+            <description />
+            <title>Clarify-it Document ID</title>
+            <required>True</required>
+        </field>
+        
+    </schema>
+    
+</model>

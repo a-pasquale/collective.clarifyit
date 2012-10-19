@@ -1,0 +1,59 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="collective.clarifyit">
+<body>
+<metal:block fill-slot="javascript_head_slot">
+<script type="text/javascript" charset="utf-8">
+    jQuery(function($) {
+        $().ready(function () {
+            var doc_id = $('#clarify_it_id').html();
+            $('#clarify-it').load('/clarify/'+doc_id+' #content', function(){
+                $("a[rel^='prettyPhoto']").prettyPhoto();
+            });
+        });
+    });
+</script>
+
+</metal:block>
+
+<metal:main fill-slot="content">
+  <metal:content-core define-macro="content">
+
+    <h1 id="parent-fieldname-title" class="documentFirstHeading"
+        tal:content="context/title"/>
+
+    <div tal:replace="structure provider:plone.abovecontentbody" />
+
+    <div i18n:domain="plone" id="category" class="documentByLine"
+         tal:define="categories context/Subject|nothing;
+                     url_quote  nocall:modules/Products.PythonScripts.standard/url_quote;"
+         tal:condition="categories">
+         <tal:filedunder i18n:translate="label_filed_under">Filed under:</tal:filedunder>
+         <span tal:repeat="category categories">
+             <a href="" class="link-category" rel="tag"  tal:content="category"
+                tal:define="quotedCat python:url_quote(category)"
+                tal:attributes="href string:${context/@@plone_portal_state/navigation_root_url}/@@search?Subject%3Alist=${quotedCat}">
+                Category
+             </a><span class="separator" tal:condition="not: repeat/category/end">,</span>
+         </span>
+     </div>
+
+     <div id="clarify-it">
+         <img tal:define="navroot context/@@plone_portal_state/navigation_root_url"
+              tal:attributes="src string:${navroot}/++resource++collective.clarifyit/preload.gif; 
+                              alt string:Loading Document" />
+     </div>
+
+     <div id="clarify_it_id" style="display: none;"
+          tal:content="context/clarify_it_id" />
+
+  </metal:content-core>
+</metal:main>
+
+</body>
+</html>
+
