@@ -28,6 +28,9 @@
         tal:content="context/title"/>
 
     <div tal:replace="structure provider:plone.abovecontentbody" />
+    <div id="edit-bar">
+        <div tal:replace="structure provider:plone.contentviews" />
+    </div>
 
     <div i18n:domain="plone" id="category" class="documentByLine"
          tal:define="categories context/Subject|nothing;
