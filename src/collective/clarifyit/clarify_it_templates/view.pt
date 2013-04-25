@@ -45,7 +45,12 @@
             $().ready(function () {
                 var doc_id = $('#clarify_it_id').html();
                 $('#clarify-it').load('/clarify/'+doc_id+' #content', function(){
-                    $("a[rel^='prettyPhoto']").prettyPhoto();
+                    $("a[rel^='prettyPhoto']").prettyPhoto({
+                        show_title: false,
+                        social_tools: false,
+                        theme: 'light_rounded',
+                        deeplinking: false
+                    });
                     $('#clarify-it #content').removeClass();
                 });
             });
