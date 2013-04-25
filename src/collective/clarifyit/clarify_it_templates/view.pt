@@ -10,6 +10,17 @@
   <metal:content-core define-macro="content"
       tal:define="show_border context/@@plone/showEditableBorder">
 
+    <style>
+        div#screensteps-content div.media div.caption a {
+            text-decoration: none;
+            color: #777;
+            background: url("/++resource++collective.clarifyit/icon-zoom.png") no-repeat;
+            padding-left: 19px;
+            line-height: 16px !important;
+            display: block;
+            float: right;
+        }
+    </style>
     <h1 id="parent-fieldname-title" class="documentFirstHeading"
         tal:content="context/title"/>
 
