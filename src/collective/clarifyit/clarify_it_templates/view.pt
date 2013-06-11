@@ -43,6 +43,7 @@
          </span>
     </div>
 
+    <div tal:replace="structure provider:plone.belowcontentbody" />
     <div id="clarify-it">
         <img tal:define="navroot context/@@plone_portal_state/navigation_root_url"
              tal:attributes="src string:${navroot}/++resource++collective.clarifyit/preload.gif; 
@@ -51,6 +52,7 @@
 
     <div id="clarify_it_id" style="display: none;" 
          tal:content="context/clarify_it_id" />
+    <div tal:replace="structure provider:plone.belowcontentbody" />
     <script type="text/javascript" charset="utf-8">
         jQuery(function($) {
             $().ready(function () {
