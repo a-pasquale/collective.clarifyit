@@ -9,6 +9,11 @@
             <title>Clarify-it Document ID</title>
             <required>True</required>
         </field>
+        <field name="lead_image" type="plone.namedfile.field.NamedBlobImage">
+            <description />
+            <title>Lead Image</title>
+            <required>False</required>
+        </field>
         
     </schema>
     
