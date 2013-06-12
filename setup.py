@@ -16,7 +16,7 @@ long_description = (
 
 setup(name='collective.clarifyit',
       version=version,
-      description="Integrate clarofy-it.com documents into plone.",
+      description="Integrate clarify-it.com documents into plone.",
       long_description=long_description,
       # Get more strings from
       # http://pypi.python.org/pypi?%3Aaction=list_classifiers
@@ -50,6 +50,7 @@ setup(name='collective.clarifyit',
           'plone.namedfile[blobs]',
           'plone.supermodel',
           'collective.prettyphoto',
+          'plone.app.relationfield',
           # -*- Extra requirements: -*-
       ],
       extras_require={'test': ['plone.app.testing']},

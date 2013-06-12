@@ -15,9 +15,6 @@ from plone.namedfile.field import NamedBlobImage, NamedBlobFile
 
 from plone.app.textfield import RichText
 
-from z3c.relationfield.schema import RelationList, RelationChoice
-from plone.formwidget.contenttree import ObjPathSourceBinder
-
 from collective.clarifyit import MessageFactory as _
 
 
@@ -58,7 +55,7 @@ class ClarifyIt(dexterity.Item):
 # of this type by uncommenting the grok.name line below or by
 # changing the view class name and template filename to View / view.pt.
 
-class View(grok.View):
+class View(dexterity.DisplayForm):
     grok.context(IClarifyIt)
     grok.require('zope2.View')
 
